@@ -1,8 +1,16 @@
 <canvas #canvas style="background: black;"></canvas>
-<label *ngIf="lives <= 0">Game Over</label>
-<label>Score: {{ score }}</label>
-<label>Round: {{ round }}</label>
-<label>Lives: {{ lives }} </label>
-<button *ngIf="$stopped.value" (click)="$stopped.next(false)">start</button>
-<button *ngIf="!$stopped.value" (click)="$stopped.next(true)">stop</button>
+<p>
+	<label *ngIf="lives <= 0">Game Over</label>
+</p>
+<p>
+  <label>Score: {{ score }}</label>
+</p>
+<p>
+  <label>Round: {{ round }}</label> 
+</p>
+<p>
+  <label>Lives: {{ lives }} </label>
+</p>
+<button *ngIf="$stopped.value" (click)="$stopped.next(false)">Start</button>
+<button *ngIf="!$stopped.value" (click)="$stopped.next(true)">Stop</button>
 <button *ngIf="lives <= 0" (click)="setUpGame()">Restart</button>
